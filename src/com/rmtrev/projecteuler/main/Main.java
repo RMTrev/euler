@@ -1,0 +1,109 @@
+package com.rmtrev.projecteuler.main;
+
+import com.rmtrev.projecteuler.questions.*;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		if(args.length == 0)
+		{
+			System.out.println("USAGE: Q# [args ...]");
+			return;
+		}
+		
+		int qNum;
+		try
+		{
+			qNum = Integer.parseInt(args[0]);
+		}
+		catch (Exception e)
+		{
+			System.out.println("ERROR: Invalid input for question number: " + args[0]);
+			return;
+		}
+		
+		IQuestion q;
+		
+		switch(qNum)
+		{
+		case 1:
+			q = new Q001();
+			break;
+		case 2:
+			q = new Q002();
+			break;
+		case 3:
+			q = new Q003();
+			break;
+		case 4:
+			q = new Q004();
+			break;
+		case 5:
+			q = new Q005();
+			break;
+		case 6:
+			q = new Q006();
+			break;
+		case 7:
+			q = new Q007();
+			break;
+		case 8:
+			q = new Q008();
+			break;
+		case 9:
+			q = new Q009();
+			break;
+		case 10:
+			q = new Q010();
+			break;
+		case 11:
+			q = new Q011();
+			break;
+		case 12:
+			q = new Q012();
+			break;
+		case 13:
+			q = new Q013();
+			break;
+		case 14:
+			q = new Q014();
+			break;
+		case 15:
+			q = new Q015();
+			break;
+		case 16:
+			q = new Q016();
+			break;
+		case 17:
+			q = new Q017();
+			break;
+		case 18:
+			q = new Q018();
+			break;
+		case 67:
+			q = new Q067();
+			break;
+		case 94:
+			q = new Q094();
+			break;
+		default:
+			System.out.println("Unknown or unimplemented question number: " + args[0]);
+			return;
+		}
+		
+		long startTime = System.nanoTime();
+		try
+		{
+			q.Run(args);
+			long endTime = System.nanoTime();
+		
+			System.out.println("Executed in " + Double.toString(Math.round((endTime - startTime) / 1000000D) / 1000D) + " seconds.");
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+}
