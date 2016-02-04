@@ -90,6 +90,9 @@ public class Main
 		case 21:
 			q = new Q021();
 			break;
+		case 22:
+			q = new Q022();
+			break;
 		case 67:
 			q = new Q067();
 			break;
