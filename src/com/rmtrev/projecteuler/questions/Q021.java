@@ -2,6 +2,8 @@ package com.rmtrev.projecteuler.questions;
 
 import java.util.ArrayList;
 
+import com.rmtrev.projecteuler.common.MathPlus;
+
 public class Q021 implements IQuestion
 {
 	@Override
@@ -13,8 +15,8 @@ public class Q021 implements IQuestion
 		{
 			if(amicableNumbers.contains(i)) continue;
 			
-			int sumOfDivisors = sum(getDivisors(i));
-			int check = sum(getDivisors(sumOfDivisors));
+			int sumOfDivisors = sum(MathPlus.getProperDivisors(i));
+			int check = sum(MathPlus.getProperDivisors(sumOfDivisors));
 			
 			if(i == check && i != sumOfDivisors)
 			{
@@ -35,27 +37,6 @@ public class Q021 implements IQuestion
 		for(int i = 0; i < list.size(); i++)
 		{
 			ret += list.get(i);
-		}
-		
-		return ret;
-	}
-
-	private ArrayList<Integer> getDivisors(int n)
-	{
-		ArrayList<Integer> ret = new ArrayList<Integer>();
-		
-		int max = (int)Math.sqrt(n);
-		for(int factor = 1; factor <= max; factor++)
-		{
-			if(n % factor == 0)
-			{
-				int otherFactor = n / factor;
-				ret.add(factor);
-				if(factor != otherFactor && otherFactor < n)
-				{
-					ret.add(otherFactor);
-				}
-			}
 		}
 		
 		return ret;
