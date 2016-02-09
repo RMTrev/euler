@@ -24,7 +24,8 @@ public class Q031 implements IQuestion
 	 * </ul>
 	 * 
 	 * <p>This function recursively finds every solution, starting with the smallest coin to ensure
-	 * distinct combinations.</p>
+	 * distinct combinations. In fact, because of these variations, this is actually much simpler
+	 * to solve compared to the normal knapsack problem.</p>
 	 * 
 	 * @param coinList The list of coins to search through
 	 * @param currentValue The current value of the "knapsack"
