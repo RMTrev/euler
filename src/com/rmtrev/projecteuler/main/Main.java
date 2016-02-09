@@ -114,6 +114,9 @@ public class Main
 		case 29:
 			q = new Q029();
 			break;
+		case 30:
+			q = new Q030();
+			break;
 		case 67:
 			q = new Q067();
 			break;
