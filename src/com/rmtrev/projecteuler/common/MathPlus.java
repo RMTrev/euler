@@ -17,6 +17,16 @@ public class MathPlus
 		return ret;
 	}
 	
+	public static long power(int b, int e)
+	{
+		int ret = 1;
+		for(int i = 0; i < e; i++)
+		{
+			ret *= b;
+		}
+		return ret;
+	}
+	
 	public static ArrayList<Integer> getProperDivisors(int n)
 	{
 		ArrayList<Integer> ret = new ArrayList<Integer>();
