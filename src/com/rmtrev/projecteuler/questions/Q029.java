@@ -1,6 +1,5 @@
 package com.rmtrev.projecteuler.questions;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Q029 implements IQuestion
