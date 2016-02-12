@@ -141,6 +141,9 @@ public class Main
 		case 38:
 			q = new Q038();
 			break;
+		case 39:
+			q = new Q039();
+			break;
 		case 67:
 			q = new Q067();
 			break;
