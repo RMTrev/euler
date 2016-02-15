@@ -64,6 +64,9 @@ public class Level02 implements ILevel
 		case 42:
 			p = new P042();
 			break;
+		case 43:
+			p = new P043();
+			break;
 		default:
 			System.out.println("Unknown or unimplemented question number: " + args[0]);
 			return;
