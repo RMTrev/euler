@@ -2,6 +2,7 @@ package com.rmtrev.projecteuler.level02;
 
 import java.util.ArrayList;
 
+import com.rmtrev.projecteuler.common.MathPlus;
 import com.rmtrev.projecteuler.interfaces.IProblem;
 
 public class P044 implements IProblem
@@ -40,14 +41,11 @@ public class P044 implements IProblem
 		return (i * (3 * i - 1)) / 2;
 	}
 	
-	private boolean isPentagonal(long n)
+	private boolean isPentagonal(long pn)
 	{
-		// TODO: This is the biggest bottleneck. Needs optimization.
-		for(int i = 1; ; i++)
-		{
-			long p = pentagonalNumber(i);
-			if(n == p) return true;
-			if(p > n) return false;
-		}
+		long sqrt = MathPlus.getPerfectSquareRoot(24 * pn + 1);
+		if(sqrt < 0) return false;
+		
+		return (sqrt + 1) % 6 == 0;
 	}
 }

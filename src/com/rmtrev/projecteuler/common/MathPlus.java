@@ -47,4 +47,17 @@ public class MathPlus
 		
 		return ret;
 	}
+	
+	public static long getPerfectSquareRoot(long n)
+	{
+		if(n < 0) return -1;
+		
+		long tmp = (long)Math.sqrt(n);
+		if(tmp * tmp == n)
+		{
+			return tmp;
+		}
+		
+		return -1;
+	}
 }
