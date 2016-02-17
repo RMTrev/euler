@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import com.rmtrev.projecteuler.common.IO;
 import com.rmtrev.projecteuler.common.WordParser;
 import com.rmtrev.projecteuler.interfaces.IProblem;
 
@@ -13,25 +14,17 @@ public class P022 implements IProblem
 	@Override
 	public void Run(String[] args) throws Exception
 	{
+		String path;
 		if(args.length < 2)
 		{
-			System.out.println("Expected file parameter.");
-			return;
-		}
-		
-		File inputFile;
-		File argFile = new File(args[1]);
-		if(argFile.isAbsolute())
-		{
-			inputFile = argFile;
+			path = "data\\p022_names.txt";
 		}
 		else
 		{
-			String curPath = System.getProperty("user.dir");
-			File curDir = new File(curPath);
-			File dataDir = new File(curDir, "data");
-			inputFile = new File(dataDir, args[1]);
+			path = args[1];
 		}
+		
+		File inputFile = IO.getFileHandler(path);
 		
 		ArrayList<String> names = WordParser.parseFile(inputFile);
 		

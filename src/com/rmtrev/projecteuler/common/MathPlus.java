@@ -50,6 +50,7 @@ public class MathPlus
 	
 	public static long getPerfectSquareRoot(long n)
 	{
+		// negative numbers cannot be squares at all, much less a perfect square
 		if(n < 0) return -1;
 		
 		long tmp = (long)Math.sqrt(n);

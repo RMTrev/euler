@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import com.rmtrev.projecteuler.common.IO;
 import com.rmtrev.projecteuler.interfaces.IProblem;
 
 public class P067 implements IProblem
@@ -12,25 +13,17 @@ public class P067 implements IProblem
 	@Override
 	public void Run(String[] args) throws Exception
 	{
+		String path;
 		if(args.length < 2)
 		{
-			System.out.println("Expected file parameter.");
-			return;
-		}
-		
-		File inputFile;
-		File argFile = new File(args[1]);
-		if(argFile.isAbsolute())
-		{
-			inputFile = argFile;
+			path = "data\\p067_triangle.txt";
 		}
 		else
 		{
-			String curPath = System.getProperty("user.dir");
-			File curDir = new File(curPath);
-			File dataDir = new File(curDir, "data");
-			inputFile = new File(dataDir, args[1]);
+			path = args[1];
 		}
+		
+		File inputFile = IO.getFileHandler(path);
 		
 		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 		String line;
