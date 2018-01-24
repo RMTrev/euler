@@ -12,5 +12,5 @@ Usage
 To run in eclipse:
 
  1. Create a new run configuration
- 2. Set **com.rmtrev.nextcapital.main.Main** as the main class
+ 2. Set **com.rmtrev.projecteuler.main.Main** as the main class
  3. Program arguments: Problem# [additional args...]
